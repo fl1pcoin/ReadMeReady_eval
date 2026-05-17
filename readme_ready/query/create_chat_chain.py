@@ -195,12 +195,12 @@ def make_qa_chain(
         question_chat_model = get_llama_chat_model(
             llm_name, model_kwargs=model_kwargs
         )
-    elif "gemma" in llm_name.lower():
-        if "gguf" in llm_name.lower():
-            model_kwargs["gguf_file"] = models[llm].gguf_file
-        question_chat_model = get_gemma_chat_model(
-            llm_name, model_kwargs=model_kwargs
-        )
+    # elif "gemma" in llm_name.lower():
+    #     if "gguf" in llm_name.lower():
+    #         model_kwargs["gguf_file"] = models[llm].gguf_file
+    #     question_chat_model = get_gemma_chat_model(
+    #         llm_name, model_kwargs=model_kwargs
+    #     )
     else:
         question_chat_model = get_openai_chat_model(
             llm_name,
@@ -225,14 +225,14 @@ def make_qa_chain(
             streaming=bool(on_token_stream),
             model_kwargs=model_kwargs,
         )
-    elif "gemma" in llm_name.lower():
-        if "gguf" in llm_name.lower():
-            model_kwargs["gguf_file"] = models[llm].gguf_file
-        question_chat_model = get_gemma_chat_model(
-            llm_name,
-            streaming=bool(on_token_stream),
-            model_kwargs=model_kwargs,
-        )
+    # elif "gemma" in llm_name.lower():
+    #     if "gguf" in llm_name.lower():
+    #         model_kwargs["gguf_file"] = models[llm].gguf_file
+    #     question_chat_model = get_gemma_chat_model(
+    #         llm_name,
+    #         streaming=bool(on_token_stream),
+    #         model_kwargs=model_kwargs,
+    #     )
     else:
         doc_chat_model = get_openai_chat_model(
             llm_name,
@@ -322,14 +322,14 @@ def make_readme_chain(
             streaming=bool(on_token_stream),
             model_kwargs=model_kwargs,
         )
-    elif "gemma" in llm_name.lower():
-        if "gguf" in llm_name.lower():
-            model_kwargs["gguf_file"] = models[llm].gguf_file
-        doc_chat_model = get_gemma_chat_model(
-            llm_name,
-            streaming=bool(on_token_stream),
-            model_kwargs=model_kwargs,
-        )
+    # elif "gemma" in llm_name.lower():
+    #     if "gguf" in llm_name.lower():
+    #         model_kwargs["gguf_file"] = models[llm].gguf_file
+    #     doc_chat_model = get_gemma_chat_model(
+    #         llm_name,
+    #         streaming=bool(on_token_stream),
+    #         model_kwargs=model_kwargs,
+    #     )
     else:
         doc_chat_model = get_openai_chat_model(
             llm_name,
